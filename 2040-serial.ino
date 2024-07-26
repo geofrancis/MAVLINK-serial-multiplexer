@@ -16,7 +16,7 @@ void setup() {
   Serial6.begin(115200);
 }
 
-void setup1() {}
+
 
 void loop() {
   if (Serial2.available()) {      
@@ -29,9 +29,6 @@ void loop() {
     Serial1.flush();
   }
 
-}
-
-void loop1() {
 
     if (Serial4.available()) {     
     Serial1.write(Serial4.read());  
