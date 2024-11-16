@@ -43,13 +43,13 @@ void loop() {
   if (Serial5.available()) {
     Serial1.write(Serial5.read());
     Serial1.flush();
-
+  }
     if (Serial6.available()) {
       Serial1.write(Serial6.read());
       Serial1.flush();
     }
   }
-}
+
 
 
 
