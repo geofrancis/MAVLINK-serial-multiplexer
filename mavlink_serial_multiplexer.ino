@@ -23,7 +23,7 @@ void setup() {
 
 void loop() {
 
-  MAVLINK_HB();
+ // MAVLINK_HB();
 
   if (Serial2.available()) {
     Serial1.write(Serial2.read());
