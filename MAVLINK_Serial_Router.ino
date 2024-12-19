@@ -10,6 +10,7 @@ SerialPIO Serial4(4, 5);
 SerialPIO Serial5(6, 7);
 SerialPIO Serial6(10, 11);
 
+
 void setup() {
   Serial.begin(115200);    // USB
   Serial1.begin(1500000);  // 0,1
@@ -27,61 +28,68 @@ void loop() {
 
   if (Serial1.available()) {
     char S1 = Serial1.read();
+
     Serial2.print(S1);
     Serial3.print(S1);
     Serial4.print(S1);
     Serial5.print(S1);
     Serial6.print(S1);
+    Serial.println("S1");
   }
 
   
   if (Serial2.available()) {
     char S2 = Serial2.read();
-    Serial2.print(S2);
+    Serial1.print(S2);
     Serial3.print(S2);
     Serial4.print(S2);
     Serial5.print(S2);
     Serial6.print(S2);
+    Serial.println("S2");
   }
 
   
   if (Serial3.available()) {
     char S3 = Serial3.read();
+    Serial1.print(S3);
     Serial2.print(S3);
-    Serial3.print(S3);
     Serial4.print(S3);
     Serial5.print(S3);
     Serial6.print(S3);
+    Serial.println("S3");
   }
 
   
   if (Serial4.available()) {
     char S4 = Serial4.read();
+    Serial1.print(S4);
     Serial2.print(S4);
     Serial3.print(S4);
-    Serial4.print(S4);
     Serial5.print(S4);
     Serial6.print(S4);
+    Serial.println("S4");
   }
 
   
   if (Serial5.available()) {
     char S5 = Serial5.read();
+    Serial1.print(S5);
     Serial2.print(S5);
     Serial3.print(S5);
     Serial4.print(S5);
-    Serial5.print(S5);
     Serial6.print(S5);
+    Serial.println("S5");
   }
 
   
   if (Serial6.available()) {
     char S6 = Serial6.read();
+    Serial1.print(S6);
     Serial2.print(S6);
     Serial3.print(S6);
     Serial4.print(S6);
     Serial5.print(S6);
-    Serial6.print(S6);
+    Serial.println("S6");
   }
 
 }
