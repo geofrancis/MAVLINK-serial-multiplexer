@@ -11,9 +11,9 @@ SerialPIO Serial5(6, 7);
 SerialPIO Serial6(10, 11);
 
 void setup() {
-  Serial.begin(115200);    // USB
+  Serial.begin(115200);   // USB
   Serial1.begin(1500000);  // 0,1
-  Serial2.begin(115200);   // 8,9
+  Serial2.begin(115200);  // 8,9
   Serial3.begin(115200);
   Serial4.begin(115200);
   Serial5.begin(115200);
@@ -23,7 +23,14 @@ void setup() {
 
 void loop() {
 
- // MAVLINK_HB();
+  MAVLINK_HB();
+  IN();
+    OUT();
+}
+
+
+
+void IN() {
 
   if (Serial2.available()) {
     Serial1.write(Serial2.read());
@@ -35,6 +42,7 @@ void loop() {
     Serial1.flush();
   }
 
+
   if (Serial4.available()) {
     Serial1.write(Serial4.read());
     Serial1.flush();
@@ -44,11 +52,20 @@ void loop() {
     Serial1.write(Serial5.read());
     Serial1.flush();
   }
-    if (Serial6.available()) {
-      Serial1.write(Serial6.read());
-      Serial1.flush();
-    }
+
+  if (Serial6.available()) {
+    Serial1.write(Serial6.read());
+    Serial1.flush();
   }
+}
+
+
+void OUT() {
+  if (Serial1.available()) {
+    Serial3.write(Serial1.read());
+  }
+}
+
 
 
 
@@ -74,5 +91,6 @@ void MAVLINK_HB() {
     mavlink_msg_heartbeat_pack(1, 241, &msg, type, autopilot_type, system_mode, custom_mode, system_state);
     len = mavlink_msg_to_send_buffer(buf, &msg);
     Serial1.write(buf, len);
+    Serial.println("HB");
   }
 }
