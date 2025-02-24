@@ -37,28 +37,28 @@ void IN() {
 
   if (Serial2.available()) {
     Serial1.write(Serial2.read());
-    Serial1.flush();
+  //  Serial1.flush();
   }
 
   if (Serial3.available()) {
     Serial1.write(Serial3.read());
-    Serial1.flush();
+ //   Serial1.flush();
   }
 
 
   if (Serial4.available()) {
     Serial1.write(Serial4.read());
-    Serial1.flush();
+   // Serial1.flush();
   }
 
   if (Serial5.available()) {
     Serial1.write(Serial5.read());
-    Serial1.flush();
+    //Serial1.flush();
   }
 
   if (Serial6.available()) {
     Serial1.write(Serial6.read());
-    Serial1.flush();
+   // Serial1.flush();
   }
   
 }
