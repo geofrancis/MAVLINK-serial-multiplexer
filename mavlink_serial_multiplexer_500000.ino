@@ -2,8 +2,8 @@
 // Use all serial ports on the Pico
 #include "mavlink/common/mavlink.h"  // Mavlink interface
 
-unsigned long previousMillis = 0;  // will store last time LED was updated
-const long interval = 1000;        // interval at which to blink (milliseconds)
+unsigned long previousMillis = 0; 
+const long interval = 1000;    
 
 
 
